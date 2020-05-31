@@ -9,7 +9,8 @@ globalThis.promisedScripts||(
 				const e=frag.appendChild(d.createElement('script'));
 				e.src=v;
 				(m[i]=new Promise(f=>{e.onload=o=>{
-					f([i,v,e,o])
+					f([i,v,e,o]);
+					e.onload=null
 				}})).then(atLoad)
 			});
 
