@@ -2,6 +2,7 @@
 A tiny async loader for scripts
 
 e.g.:
+```
 			Promise.all(loadScripts(
 				[
 					'./res/script/required/a.js',
@@ -19,3 +20,4 @@ e.g.:
 			).catch(case=>{
 				console.log('wrong',case)
 			});
+```
