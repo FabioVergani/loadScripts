@@ -31,7 +31,8 @@ Promise.all(loadScripts(
 			"./res/script/required/",
 			[
 				'a.js',
-				'b.js'
+				'b.js',
+				'c.js'
 			]
 		]
 	],{
