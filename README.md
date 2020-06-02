@@ -8,7 +8,7 @@ Promise.all(loadScripts(
 		'./res/script/required/a.js',
 		'./res/script/required/b.js',
 		'./res/script/required/c.js'
-    //,ecc..
+   		//,ecc..
 	],{
 		onload:([index,src,node])=>{
 			console.log('loaded',{index,src,node})
