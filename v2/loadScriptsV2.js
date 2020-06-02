@@ -1,13 +1,31 @@
 var loadScripts=(deps,opt={})=>{
 	if(deps.length){
 		const { async=true, onload:handle=null }=opt,
-		d=document,
-		P=Promise,
+    f=new DocumentFragment(),
 		n=Infinity,
-		m=[];
-		let f=(b,c)=>{for(const a of b){if('s'!==(typeof a)[0]){f(a[1],[c,a[0]])}else{m[m.length]=[c,a]}}};
-		f(deps);
-		f=new DocumentFragment();
+		P=Promise,
+		d=document,
+		m=[],
+		g=(e,s)=>{
+			const t=v=>'s'!==(typeof v)[0];
+			if(t(e)){
+				for(const x of e){
+					const v=[s,x];
+					if(t(x)){
+						if(x.length){
+							v[1]=x[0];g(x[1],v)
+						}else{
+							m[m.length]=v
+						}
+					}else{
+						m[m.length]=v
+					}
+				}
+			}else{
+				 m[m.length]=e
+			}
+		};
+		g(deps,'');
 		m.forEach((v,i,m)=>{
 			const s=v.flat(n).join('');
 			(m[i]=new P((a,b)=>{
