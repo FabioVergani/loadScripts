@@ -18,7 +18,7 @@ Promise.all(loadScripts(
 	success=>{
 		console.log('complete',success)
 	}
-).catch(case=>{
-	console.log('wrong',case)
+).catch(bad=>{
+	console.log('wrong',bad)
 });
 ```
